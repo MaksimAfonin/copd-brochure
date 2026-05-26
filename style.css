@@ -561,7 +561,7 @@ h3 {
 
 @media (max-width: 980px) {
   .site-header {
-    align-items: flex-start;
+    align-items: stretch;
     flex-direction: column;
     border-radius: 28px;
   }
@@ -594,17 +594,142 @@ h3 {
 }
 
 @media (max-width: 640px) {
+  body {
+    background:
+      radial-gradient(circle at 0 0, rgba(15, 143, 157, 0.18), transparent 22rem),
+      linear-gradient(145deg, #f9fcff 0%, #eaf5f8 100%);
+  }
+
+  body::before {
+    background-size: 34px 34px;
+  }
+
   .section,
   .site-header,
   .role-section,
   .footer {
-    width: min(100% - 20px, 1180px);
+    width: min(100% - 24px, 1180px);
+  }
+
+  .site-header {
+    top: 8px;
+    gap: 8px;
+    margin-top: 8px;
+    padding: 8px;
+    border-radius: 24px;
+  }
+
+  .brand {
+    min-width: 0;
+    padding: 2px 6px 2px 2px;
+    font-size: 15px;
+  }
+
+  .brand-mark {
+    width: 34px;
+    height: 34px;
+  }
+
+  .nav {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 6px;
+    overflow-x: auto;
+    padding: 2px 0 4px;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .nav a {
+    flex: 0 0 auto;
+    padding: 9px 12px;
+    background: rgba(15, 143, 157, 0.08);
+    font-size: 13px;
+    white-space: nowrap;
+  }
+
+  .section {
+    padding: 36px 0;
+  }
+
+  .hero {
+    gap: 12px;
+    padding-top: 20px;
+  }
+
+  h1 {
+    margin-bottom: 18px;
+    font-size: clamp(36px, 10.5vw, 46px);
+    line-height: 1;
+    letter-spacing: -0.045em;
+  }
+
+  h2 {
+    font-size: clamp(28px, 8.5vw, 36px);
+    line-height: 1.06;
+    letter-spacing: -0.045em;
+  }
+
+  h3 {
+    font-size: 20px;
+  }
+
+  .eyebrow,
+  .section-kicker {
+    margin-bottom: 12px;
+    font-size: 12px;
+  }
+
+  .hero-text,
+  .lead-block,
+  .section-heading p,
+  .card p,
+  .timeline p,
+  .research-card p,
+  .checklist p,
+  .conclusion p,
+  .footer,
+  .symptoms-grid p,
+  .prevention-list p {
+    font-size: 16px;
+    line-height: 1.55;
+  }
+
+  .hero-text {
+    margin-bottom: 24px;
   }
 
   .hero-content,
   .hero-card,
+  .prevention-panel,
+  .research-card,
+  .speech-card,
   .conclusion {
-    border-radius: 28px;
+    border-radius: 26px;
+  }
+
+  .hero-content {
+    padding: 28px 20px 22px;
+  }
+
+  .hero-card {
+    min-height: 220px;
+    padding: 22px;
+  }
+
+  .hero-card::before {
+    width: 88px;
+    height: 88px;
+    border-radius: 26px;
+  }
+
+  .hero-card strong {
+    font-size: 26px;
+    line-height: 1.08;
   }
 
   .hero-actions,
@@ -614,6 +739,8 @@ h3 {
 
   .button {
     width: 100%;
+    min-height: 48px;
+    padding: 0 18px;
   }
 
   .stats,
@@ -623,5 +750,154 @@ h3 {
   .research-grid,
   .checklist {
     grid-template-columns: 1fr;
+  }
+
+  .stats article,
+  .card,
+  .symptoms-grid article,
+  .timeline article,
+  .research-grid article,
+  .checklist article {
+    padding: 20px;
+    border-radius: 22px;
+  }
+
+  .stats strong,
+  .research-grid strong {
+    font-size: 42px;
+  }
+
+  .split {
+    gap: 12px;
+  }
+
+  .lead-block {
+    padding-top: 0;
+  }
+
+  .section-heading {
+    margin-bottom: 22px;
+  }
+
+  .cards-grid,
+  .stats,
+  .symptoms-grid,
+  .timeline,
+  .research-grid,
+  .checklist {
+    gap: 12px;
+  }
+
+  .icon {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 16px;
+    border-radius: 16px;
+    font-size: 23px;
+  }
+
+  .symptoms-grid,
+  .timeline {
+    margin-top: 22px;
+  }
+
+  .symptoms-grid span,
+  .timeline span {
+    margin-bottom: 22px;
+    font-size: 36px;
+  }
+
+  .prevention-panel {
+    gap: 18px;
+    padding: 22px;
+  }
+
+  .prevention-list article {
+    padding: 18px;
+    border-radius: 18px;
+  }
+
+  .research {
+    gap: 12px;
+  }
+
+  .research-card {
+    padding: 24px 20px;
+  }
+
+  .communication,
+  .memo {
+    padding-top: 28px;
+  }
+
+  .speech-card {
+    padding: 28px 20px;
+  }
+
+  .speech-card::before {
+    top: 2px;
+    right: 16px;
+    font-size: 92px;
+  }
+
+  .speech-card p {
+    font-size: 21px;
+    line-height: 1.42;
+  }
+
+  .checklist article {
+    gap: 12px;
+  }
+
+  .checklist span {
+    width: 28px;
+    height: 28px;
+  }
+
+  .conclusion {
+    margin-bottom: 36px;
+    padding: 28px 20px;
+    text-align: left;
+  }
+
+  .conclusion p {
+    margin-top: 16px;
+  }
+
+  .footer {
+    padding-bottom: 24px;
+  }
+}
+
+@media (max-width: 380px) {
+  .section,
+  .site-header,
+  .role-section,
+  .footer {
+    width: min(100% - 18px, 1180px);
+  }
+
+  .brand span:last-child {
+    max-width: 220px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .hero-content,
+  .hero-card,
+  .prevention-panel,
+  .research-card,
+  .speech-card,
+  .conclusion {
+    border-radius: 22px;
+  }
+
+  h1 {
+    font-size: 34px;
+  }
+
+  h2 {
+    font-size: 27px;
   }
 }
