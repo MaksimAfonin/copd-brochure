@@ -127,9 +127,13 @@ h3 {
 .hero-card,
 .stats article,
 .card,
+.symptoms-grid article,
+.prevention-panel,
+.prevention-list article,
 .timeline article,
 .research-card,
 .research-grid article,
+.speech-card,
 .checklist article,
 .conclusion {
   border: 1px solid var(--line);
@@ -320,8 +324,11 @@ h3 {
 .lead-block p:last-child,
 .section-heading p:last-child,
 .card p:last-child,
+.symptoms-grid p:last-child,
+.prevention-list p:last-child,
 .timeline p:last-child,
 .research-card p:last-child,
+.speech-card p:last-child,
 .checklist p:last-child,
 .conclusion p:last-child {
   margin-bottom: 0;
@@ -357,6 +364,91 @@ h3 {
   border-radius: 18px;
   background: rgba(15, 143, 157, 0.1);
   font-size: 26px;
+}
+
+.symptoms-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-top: 34px;
+}
+
+.symptoms-grid article {
+  padding: 26px;
+  border-radius: 30px;
+}
+
+.symptoms-grid span {
+  display: inline-flex;
+  margin-bottom: 34px;
+  color: var(--primary-dark);
+  font-size: 44px;
+  font-weight: 950;
+  letter-spacing: -0.08em;
+}
+
+.symptoms-grid p,
+.prevention-list p,
+.speech-card p {
+  color: var(--muted);
+  font-size: 18px;
+  line-height: 1.65;
+}
+
+.prevention-panel {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: clamp(24px, 5vw, 60px);
+  padding: clamp(28px, 6vw, 64px);
+  border-radius: 40px;
+  background:
+    radial-gradient(circle at top left, rgba(15, 143, 157, 0.14), transparent 28rem),
+    rgba(255, 255, 255, 0.78);
+}
+
+.prevention-list {
+  display: grid;
+  gap: 14px;
+}
+
+.prevention-list article {
+  padding: 22px;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.62);
+  box-shadow: none;
+}
+
+.communication {
+  padding-top: 42px;
+}
+
+.speech-card {
+  position: relative;
+  padding: clamp(28px, 5vw, 52px);
+  border-radius: 34px;
+  background:
+    linear-gradient(135deg, rgba(15, 143, 157, 0.12), rgba(255, 255, 255, 0.82)),
+    var(--surface);
+}
+
+.speech-card::before {
+  content: "“";
+  position: absolute;
+  top: 10px;
+  right: 28px;
+  color: rgba(15, 143, 157, 0.16);
+  font-size: 160px;
+  font-weight: 950;
+  line-height: 1;
+}
+
+.speech-card p {
+  position: relative;
+  max-width: 920px;
+  color: var(--text);
+  font-size: clamp(22px, 3vw, 32px);
+  line-height: 1.45;
+  letter-spacing: -0.03em;
 }
 
 .role-section {
@@ -491,8 +583,13 @@ h3 {
 
   .stats,
   .cards-grid,
+  .symptoms-grid,
   .timeline {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .prevention-panel {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -521,6 +618,7 @@ h3 {
 
   .stats,
   .cards-grid,
+  .symptoms-grid,
   .timeline,
   .research-grid,
   .checklist {
